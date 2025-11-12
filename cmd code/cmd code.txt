@@ -1,0 +1,8 @@
+cd %USERPROFILE%\Videos\ians projects
+npx create-next-app@latest drl-site ^
+  --ts ^
+  --eslint ^
+  --tailwind ^
+  --src-dir ^
+  --app ^
+  --import-alias "@/*"

@@ -1,0 +1,124 @@
+/* ✅ Tailwind v3 directives — must be the first 3 lines */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Design tokens (v3 style) */
+:root {
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --primary: 173 70% 34%;
+  --primary-foreground: 0 0% 100%;
+
+  --accent: 38 92% 50%;
+  --accent-foreground: 0 0% 10%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 173 70% 34%;
+}
+
+/* (optional) dark mode; keep if you like */
+.dark {
+  --background: 222 84% 6%;
+  --foreground: 210 40% 98%;
+  --card: 222 84% 8%;
+  --card-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 72%;
+  --primary: 173 70% 40%;
+  --accent: 38 92% 56%;
+  --border: 217 33% 18%;
+  --input: 217 33% 18%;
+  --ring: 173 70% 40%;
+}
+
+/* Basic page styles */
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+/* Soft background gradient + dotted texture */
+body {
+  background: radial-gradient(1200px 600px at 10% -10%, hsl(173 70% 92%) 0%, transparent 40%),
+              radial-gradient(1000px 600px at 110% 0%, hsl(38 92% 92%) 0%, transparent 40%);
+  color: hsl(var(--foreground));
+}
+
+@media (min-width: 768px) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(hsl(210 30% 90%) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.25;
+  }
+}
+
+/* Card shadow feel */
+.shadow-card {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+/* ---- Cozy background (safe) ---- */
+body {
+  /* two very light radial glows */
+  background:
+    radial-gradient(1200px 600px at 10% -10%, hsl(173 70% 96%) 0%, transparent 40%),
+    radial-gradient(1000px 600px at 110% 0%, hsl(38 92% 96%) 0%, transparent 40%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* A light dotted texture that WON'T cover content */
+html {
+  background-image: radial-gradient(hsl(210 30% 90%) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+  background-position: 0 0;
+  /* keep it subtle */
+  --dot-opacity: 0.25;
+}
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(hsl(210 30% 90% / var(--dot-opacity)) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: -1; /* stays behind everything */
+}
+/* --- Cozy background (visible) --- */
+html, body { min-height: 100%; }
+
+body {
+  /* two gentle glows + base color */
+  background:
+    radial-gradient(1100px 520px at 8% -10%, hsl(173 70% 92%) 0%, transparent 50%),
+    radial-gradient(900px 520px at 108% -8%, hsl(38 92% 92%) 0%, transparent 50%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* subtle dotted texture — sits above the base but below content */
+body { position: relative; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(hsl(210 20% 85% / 0.35) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 0;
+}
+
+/* make main content sit above the texture */
+main, header, footer { position: relative; z-index: 1; }
