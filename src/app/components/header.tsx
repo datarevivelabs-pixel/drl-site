@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -16,14 +17,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
-      
       {/* DESKTOP HEADER */}
       <div className="container mx-auto max-w-6xl px-4 py-3 hidden md:flex items-center justify-between">
-        
-        {/* LOGO + TEXT */}
+        {/* Logo + Name */}
         <Link href="/" className="flex items-center gap-4">
-          
-          {/* BIG LOGO */}
           <Image
             src="/logo.png"
             alt="DRL Logo"
@@ -33,7 +30,6 @@ export function Header() {
             priority
           />
 
-          {/* COMPANY NAME */}
           <div className="flex flex-col leading-tight">
             <span className="text-2xl font-bold text-gray-900">
               Data Revive Labs
@@ -42,10 +38,9 @@ export function Header() {
               Data Recovery • Nairobi
             </span>
           </div>
-
         </Link>
 
-        {/* NAVIGATION */}
+        {/* Desktop Nav */}
         <nav className="flex gap-6 text-base font-medium">
           {navLinks.map((link) => {
             const active = pathname === link.href;
@@ -65,7 +60,7 @@ export function Header() {
           })}
         </nav>
 
-        {/* WHATSAPP BUTTON */}
+        {/* WhatsApp button */}
         <a
           href="https://wa.me/2547XXXXXXX"
           target="_blank"
@@ -74,12 +69,10 @@ export function Header() {
         >
           WhatsApp
         </a>
-
       </div>
 
       {/* MOBILE HEADER */}
       <div className="container mx-auto max-w-6xl px-4 py-3 flex md:hidden items-center justify-between">
-        
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
@@ -92,7 +85,7 @@ export function Header() {
         </Link>
 
         <a
-          href="https://wa.me/2547XXXXXXX"
+          href="https://wa.me/254768177714"
           target="_blank"
           rel="noreferrer"
           className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-emerald-700 transition"
@@ -120,7 +113,6 @@ export function Header() {
           );
         })}
       </nav>
-
     </header>
   );
 }
