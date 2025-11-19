@@ -4,16 +4,52 @@
     <loc>https://datarevivelabs.co.ke/</loc>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://datarevivelabs.co.ke/services</loc>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://datarevivelabs.co.ke/pricing</loc>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://datarevivelabs.co.ke/about</loc>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://datarevivelabs.co.ke/contact</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Individual service pages -->
+  <url>
+    <loc>https://datarevivelabs.co.ke/services/hdd-ssd</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://datarevivelabs.co.ke/services/raid-nas</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://datarevivelabs.co.ke/services/phone-data</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://datarevivelabs.co.ke/services/forensics</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://datarevivelabs.co.ke/services/emergency</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Booking page, if you have /book -->
+  <url>
+    <loc>https://datarevivelabs.co.ke/book</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

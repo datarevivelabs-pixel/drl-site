@@ -15,68 +15,94 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://datarevivelabs.co.ke";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://datarevivelabs.co.ke"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Data Revive Labs – Professional Data Recovery in Kenya",
+    default: "Data Revive Labs | Professional Data Recovery in Nairobi, Kenya",
     template: "%s | Data Revive Labs",
   },
   description:
-    "Kenya’s leading data recovery specialists. HDD/SSD recovery, RAID/NAS repair, phone data recovery, digital forensics, and emergency 24/7 services. Based in Nairobi and serving all of Kenya.",
+    "Professional data recovery in Nairobi and Kenya-wide. HDD & SSD recovery, RAID/NAS, phone data recovery, digital forensics, and emergency 24/7 support.",
   keywords: [
-    "data recovery kenya",
-    "data recovery nairobi",
-    "hdd recovery kenya",
-    "ssd recovery kenya",
-    "raid recovery kenya",
-    "nas data recovery kenya",
-    "phone data recovery kenya",
-    "digital forensics kenya",
-    "data revive labs",
+    "data recovery Kenya",
+    "data recovery Nairobi",
+    "HDD recovery",
+    "SSD recovery",
+    "RAID recovery",
+    "NAS recovery",
+    "phone data recovery",
+    "digital forensics",
+    "emergency data recovery",
+    "Data Revive Labs",
   ],
-  icons: {
-    icon: "/favicon.ico",
+  alternates: {
+    canonical: "/",
   },
-  authors: [{ name: "Data Revive Labs" }],
   openGraph: {
-    title: "Data Revive Labs – Professional Data Recovery in Kenya",
-    description:
-      "We recover lost, deleted, damaged, or corrupted data from HDD, SSD, RAID, NAS, phones, and servers. Confidential, professional service from Nairobi – serving all of Kenya.",
-    url: "https://datarevivelabs.co.ke",
-    siteName: "Data Revive Labs",
     type: "website",
-    locale: "en_KE",
+    url: siteUrl,
+    title: "Data Revive Labs | Data Recovery in Nairobi & Kenya-wide",
+    description:
+      "We bring your lost data back to life. HDD/SSD, RAID/NAS, phones, and digital forensics with strict confidentiality.",
+    siteName: "Data Revive Labs",
     images: [
       {
-        url: "/og-image.png",
+        url: "/hero.png",
         width: 1200,
         height: 630,
-        alt: "Data Revive Labs – Data Recovery Experts in Kenya",
+        alt: "Data Revive Labs - Professional Data Recovery Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Revive Labs – Data Recovery Experts in Kenya",
+    title: "Data Revive Labs | Professional Data Recovery",
     description:
-      "Specialists in HDD/SSD recovery, RAID/NAS repair, phone data recovery, digital forensics, and emergency 24/7 services.",
-    images: ["/og-image.png"],
-    creator: "@datarevivelabs",
+      "Kenya-wide data recovery: HDD & SSD, RAID/NAS, phones, and digital forensics. Free evaluation. No data, no fee.",
+    images: ["/hero.png"],
   },
-  alternates: {
-    canonical: "https://datarevivelabs.co.ke",
+  icons: {
+    icon: "/logo.svg",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+};
+
+// ---- JSON-LD Structured Data (Local Business / Professional Service) ----
+const schemaOrgBusiness = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Data Revive Labs",
+  url: siteUrl,
+  image: `${siteUrl}/hero.png`,
+  telephone: "+254768177714",
+  email: "info@datarevivelabs.co.ke",
+  description:
+    "Professional data recovery services based in Nairobi and serving clients across Kenya. HDD & SSD recovery, RAID/NAS, phone data recovery, digital forensics, and emergency 24/7 support.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Kenya",
+  },
+  sameAs: [
+    "https://www.facebook.com/DataReviveLabs/",
+    "https://x.com/DataReviveLabs",
+    "https://www.instagram.com/datarevivelabs",
+    "https://www.tiktok.com/@datarevivelabs",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+254768177714",
+      contactType: "customer service",
+      areaServed: "KE",
+      availableLanguage: ["en"],
     },
-  },
+  ],
 };
 
 export default function RootLayout({
@@ -85,44 +111,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
       >
-        {/* LocalBusiness JSON-LD for Google (SEO) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Data Revive Labs",
-              image: "https://datarevivelabs.co.ke/og-image.png",
-              url: "https://datarevivelabs.co.ke",
-              telephone: "+254768177714",
-              email: "info@datarevivelabs.co.ke",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Nairobi",
-                addressRegion: "Nairobi County",
-                addressCountry: "KE",
-              },
-              description:
-                "Professional data recovery services in Kenya including HDD/SSD recovery, RAID/NAS repair, phone data recovery, digital forensics, and emergency 24/7 response.",
-              priceRange: "KSh 3,000 - KSh 100,000",
-              sameAs: [
-                "https://www.facebook.com/DataReviveLabs/",
-                "https://instagram.com/datarevivelabs",
-                "https://www.tiktok.com/@datarevivelabs",
-                "https://x.com/datarevivelabs",
-              ],
-            }),
-          }}
-        />
-
         <Header />
         <main className="min-h-[70vh]">{children}</main>
         <Footer />
+
+        {/* JSON-LD for rich results */}
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaOrgBusiness),
+          }}
+        />
       </body>
     </html>
   );
