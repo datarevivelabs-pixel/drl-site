@@ -1,61 +1,58 @@
-const tiers = [
-  {
-    name: "Standard",
-    price: "KSh 12,000 – 25,000",
-    desc: "Most desktop/laptop recoveries in 2–5 days.",
-    points: ["Free evaluation", "No data — no fee", "Encrypted delivery options"],
-    cta: { label: "Book Free Evaluation", href: "/book" },
+// src/app/pricing/page.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Data Recovery Pricing | Data Revive Labs Kenya",
+  description:
+    "Transparent data recovery pricing for HDD & SSD, RAID/NAS, phone data recovery and emergency services in Kenya. Free evaluation — you only pay if we recover approved data.",
+  alternates: {
+    canonical: "/pricing",
   },
-  {
-    name: "Express",
-    badge: "Popular",
-    price: "KSh 25,000 – 50,000",
-    desc: "Priority bench time, faster turnaround (24–48h).",
-    points: ["Senior engineer priority", "Progress updates", "Optional cleanroom work"],
-    cta: { label: "Chat on WhatsApp", href: "https://wa.me/2547XXXXXXX" },
-    accent: true,
-  },
-  {
-    name: "Emergency 24/7",
-    price: "KSh 50,000+",
-    desc: "After-hours response & same-day pickup (Nairobi).",
-    points: ["Immediate triage", "On-site pickup available", "Signed NDA on request"],
-    cta: { label: "Call Now", href: "tel:+2547XXXXXXX" },
-  },
-];
+};
 
 export default function Page() {
   return (
     <section className="container py-12">
-      <h1 className="text-3xl font-bold tracking-tight">Pricing</h1>
-      <p className="mt-2 text-muted-foreground max-w-2xl">
-        Free evaluation. Final quote depends on device type, fault, parts, and urgency.
-        You only pay if we recover the data you approve.
+      <h1 className="text-3xl font-bold tracking-tight mb-4">
+        Data Recovery Pricing
+      </h1>
+      <p className="text-muted-foreground max-w-2xl">
+        Every case is different, so we always start with a free evaluation. Once
+        we understand the failure, we give you a fixed quote before any paid
+        work begins.
       </p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
-        {tiers.map((t) => (
-          <div key={t.name}
-               className={`rounded-2xl border bg-card p-6 shadow-card ${t.accent ? "ring-1 ring-accent" : ""}`}>
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold">{t.name}</h2>
-              {t.badge && <span className="rounded-full bg-accent/15 px-2 py-1 text-xs font-medium">{t.badge}</span>}
-            </div>
-            <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>
-            <p className="mt-4 text-lg font-bold">{t.price}</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              {t.points.map((p) => (
-                <li key={p} className="flex gap-2"><span>•</span><span>{p}</span></li>
-              ))}
-            </ul>
-            <a className={`mt-6 inline-flex h-10 items-center justify-center rounded-xl px-4 text-sm font-medium ${
-                t.accent ? "bg-accent text-accent-foreground" : "bg-primary text-primary-foreground"
-              }`} href={t.cta.href}>
-              {t.cta.label}
-            </a>
-          </div>
-        ))}
+        <div className="rounded-2xl border bg-card p-6 shadow-card">
+          <h2 className="font-semibold text-lg mb-2">HDD &amp; SSD</h2>
+          <p className="text-sm text-muted-foreground">
+            Typical recoveries from personal and business drives.
+          </p>
+          <p className="mt-4 font-semibold">From KES xx,xxx</p>
+        </div>
+
+        <div className="rounded-2xl border bg-card p-6 shadow-card">
+          <h2 className="font-semibold text-lg mb-2">RAID / NAS / Server</h2>
+          <p className="text-sm text-muted-foreground">
+            Complex multi-disk and business-critical environments.
+          </p>
+          <p className="mt-4 font-semibold">Custom quote</p>
+        </div>
+
+        <div className="rounded-2xl border bg-card p-6 shadow-card">
+          <h2 className="font-semibold text-lg mb-2">Phone &amp; Mobile</h2>
+          <p className="text-sm text-muted-foreground">
+            Smartphone and tablet data recovery for photos and messages.
+          </p>
+          <p className="mt-4 font-semibold">From KES xx,xxx</p>
+        </div>
       </div>
+
+      <p className="mt-8 text-sm text-muted-foreground max-w-2xl">
+        Prices depend on the severity of damage, capacity, urgency and parts
+        required. You&apos;ll always receive a clear quote before you decide to
+        proceed, and you only pay if we recover the data you approve.
+      </p>
     </section>
   );
 }
