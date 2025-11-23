@@ -1,132 +1,103 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ReactNode } from "react";
 
+// If you’re using a custom Header/Footer components, keep these imports.
+// If not, you can remove them.
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const siteUrl = "https://datarevivelabs.co.ke";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "Data Revive Labs | Professional Data Recovery in Nairobi, Kenya",
-    template: "%s | Data Revive Labs",
-  },
+  title: "Data Revive Labs | Professional Data Recovery in Kenya",
   description:
-    "Professional data recovery in Nairobi and Kenya-wide. HDD & SSD recovery, RAID/NAS, phone data recovery, digital forensics, and emergency 24/7 support.",
+    "Top-rated data recovery services in Kenya. HDD, SSD, RAID, phone data, forensic recovery & emergency services. Trusted, secure & affordable.",
   keywords: [
     "data recovery Kenya",
     "data recovery Nairobi",
     "HDD recovery",
     "SSD recovery",
-    "RAID recovery",
+    "RAID recovery Kenya",
     "NAS recovery",
     "phone data recovery",
-    "digital forensics",
+    "mobile data recovery",
+    "forensic data recovery",
     "emergency data recovery",
-    "Data Revive Labs",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
-    type: "website",
-    url: siteUrl,
-    title: "Data Revive Labs | Data Recovery in Nairobi & Kenya-wide",
+    title: "Data Revive Labs — Professional Data Recovery in Kenya",
     description:
-      "We bring your lost data back to life. HDD/SSD, RAID/NAS, phones, and digital forensics with strict confidentiality.",
+      "We restore lost data from HDDs, SSDs, RAID/NAS, phones and more. Secure, confidential and professional data recovery services in Kenya.",
+    url: "https://datarevivelabs.co.ke",
     siteName: "Data Revive Labs",
     images: [
       {
-        url: "/hero.png",
+        url: "/og-image.png", // add this image in public/ if it doesn’t exist
         width: 1200,
         height: 630,
-        alt: "Data Revive Labs - Professional Data Recovery Services",
+        alt: "Data Revive Labs - Professional Data Recovery in Kenya",
       },
     ],
+    locale: "en_KE",
+    type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Data Revive Labs | Professional Data Recovery",
-    description:
-      "Kenya-wide data recovery: HDD & SSD, RAID/NAS, phones, and digital forensics. Free evaluation. No data, no fee.",
-    images: ["/hero.png"],
-  },
-  icons: {
-    icon: "/logo.svg",
+  metadataBase: new URL("https://datarevivelabs.co.ke"),
+  alternates: {
+    canonical: "https://datarevivelabs.co.ke",
   },
 };
 
-// ---- JSON-LD Structured Data (Local Business / Professional Service) ----
-const schemaOrgBusiness = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Data Revive Labs",
-  url: siteUrl,
-  image: `${siteUrl}/hero.png`,
-  telephone: "+254768177714",
-  email: "info@datarevivelabs.co.ke",
-  description:
-    "Professional data recovery services based in Nairobi and serving clients across Kenya. HDD & SSD recovery, RAID/NAS, phone data recovery, digital forensics, and emergency 24/7 support.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Nairobi",
-    addressCountry: "KE",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "Kenya",
-  },
-  sameAs: [
-    "https://www.facebook.com/DataReviveLabs/",
-    "https://x.com/DataReviveLabs",
-    "https://www.instagram.com/datarevivelabs",
-    "https://www.tiktok.com/@datarevivelabs",
-  ],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: "+254768177714",
-      contactType: "customer service",
-      areaServed: "KE",
-      availableLanguage: ["en"],
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+function SchemaMarkup() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Data Revive Labs",
+    image: "https://datarevivelabs.co.ke/og-image.png",
+    url: "https://datarevivelabs.co.ke",
+    telephone: "+2547XXXXXXXX", // put your real phone number
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressRegion: "Nairobi",
+      addressCountry: "KE",
     },
-  ],
-};
+    priceRange: "$$",
+    description:
+      "Professional data recovery services in Kenya for HDDs, SSDs, RAID/NAS, phones and more.",
+    sameAs: [
+      "https://facebook.com/yourpage",   // replace with real links
+      "https://instagram.com/yourpage",
+    ],
+  };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
   return (
-    <html lang="en" className="h-full">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background text-foreground antialiased`}
-      >
-        <Header />
-        <main className="min-h-[70vh]">{children}</main>
-        <Footer />
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
 
-        {/* JSON-LD for rich results */}
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schemaOrgBusiness),
-          }}
-        />
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <html lang="en">
+      <head>
+        {/* Structured data for Google */}
+        <SchemaMarkup />
+      </head>
+      <body className="min-h-screen bg-background text-foreground flex flex-col">
+        {/* Site header / navigation */}
+        <Header />
+
+        {/* Page content */}
+        <main className="flex-1">{children}</main>
+
+        {/* Site footer */}
+        <Footer />
       </body>
     </html>
   );
