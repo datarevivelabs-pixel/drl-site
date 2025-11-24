@@ -1,140 +1,201 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { useState } from "react";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+const PHONE_DISPLAY = "+254 768 177 714";
+const PHONE_TEL = "+254768177714";
+const WHATSAPP_TEL = "254768177714";
 
 export function Header() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname?.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
-      
-      {/* DESKTOP HEADER */}
-      <div className="container mx-auto max-w-6xl px-4 py-3 hidden md:flex items-center justify-between">
-        
-        {/* Logo + Name */}
+    <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
+      <div className="container flex h-24 items-center justify-between gap-8">
+        {/* BIG LOGO + BRAND */}
         <Link href="/" className="flex items-center gap-4">
           <Image
             src="/logo.png"
-            alt="DRL Logo"
-            width={110}
-            height={110}
-            className="rounded-lg"
+            alt="Data Revive Labs logo"
+            width={220}
+            height={80}
             priority
+            className="h-20 w-auto rounded-xl shadow-sm"
           />
-
-          <div className="flex flex-col leading-tight">
-            <span className="text-2xl font-bold text-gray-900">
+          <div className="hidden flex-col leading-tight sm:flex">
+            <span className="text-xl md:text-2xl font-bold tracking-tight">
               Data Revive Labs
             </span>
-            <span className="text-sm text-gray-500 -mt-1">
+            <span className="text-sm md:text-base text-muted-foreground">
               Data Recovery • Nairobi
             </span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="flex gap-6 text-base font-medium">
-          {navLinks.map((link) => {
-            const active = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}   // ← THIS WAS YOUR ERROR
-                className={
-                  active
-                    ? "text-emerald-600 font-semibold"
-                    : "text-gray-600 hover:text-gray-900"
-                }
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+        {/* DESKTOP NAV */}
+        <nav className="hidden items-center gap-6 text-sm md:flex">
+          <Link
+            href="/"
+            className={
+              isActive("/")
+                ? "font-semibold text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/#services"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/pricing"
+            className={
+              isActive("/pricing")
+                ? "font-semibold text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }
+          >
+            Pricing
+          </Link>
+
+          <Link
+            href="/about"
+            className={
+              isActive("/about")
+                ? "font-semibold text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }
+          >
+            About
+          </Link>
+
+          <Link
+            href="/contact"
+            className={
+              isActive("/contact")
+                ? "font-semibold text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            }
+          >
+            Contact
+          </Link>
         </nav>
 
-        {/* Desktop Actions */}
-        <div className="flex items-center gap-3">
-          <a
-            href="tel:+254768177714"
-            className="rounded-full border border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition"
+        {/* DESKTOP ACTION BUTTONS */}
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href={`tel:${PHONE_TEL}`}
+            className="inline-flex items-center justify-center rounded-full border border-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-emerald-700 hover:bg-emerald-50"
           >
-            Call: +254 768 177 714
-          </a>
-
-          <a
-            href="https://wa.me/254768177714"
+            Call: {PHONE_DISPLAY}
+          </Link>
+          <Link
+            href={`https://wa.me/${WHATSAPP_TEL}`}
             target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white shadow hover:bg-emerald-700 transition"
+            className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/40 hover:bg-emerald-700"
           >
             WhatsApp
-          </a>
+          </Link>
         </div>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="inline-flex items-center justify-center rounded-md border px-3 py-2 text-xs font-medium md:hidden"
+        >
+          Menu
+        </button>
       </div>
 
-      {/* MOBILE HEADER */}
-      <div className="container mx-auto max-w-6xl px-4 py-3 flex md:hidden items-center justify-between">
-        
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="DRL Logo"
-            width={80}
-            height={80}
-            className="rounded-lg"
-            priority
-          />
-        </Link>
-
-        <div className="flex items-center gap-2">
-          <a
-            href="tel:+254768177714"
-            className="rounded-full border border-emerald-600 px-3 py-2 text-[11px] font-semibold text-emerald-700 hover:bg-emerald-50 transition"
-          >
-            Call
-          </a>
-
-          <a
-            href="https://wa.me/254768177714"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-emerald-700 transition"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-      {/* MOBILE NAV BAR */}
-      <nav className="container mx-auto max-w-6xl px-4 pb-2 flex md:hidden gap-6 overflow-x-auto text-sm">
-        {navLinks.map((link) => {
-          const active = pathname === link.href;
-          return (
+      {/* MOBILE NAV + BUTTONS */}
+      {open && (
+        <nav className="border-t bg-background md:hidden">
+          <div className="container flex flex-col gap-2 py-3 text-sm">
             <Link
-              key={link.href}
-              href={link.href}
+              href="/"
+              onClick={() => setOpen(false)}
               className={
-                active
-                  ? "text-emerald-600 font-bold whitespace-nowrap"
-                  : "text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                isActive("/")
+                  ? "font-semibold text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               }
             >
-              {link.label}
+              Home
             </Link>
-          );
-        })}
-      </nav>
+            <Link
+              href="/#services"
+              onClick={() => setOpen(false)}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              Services
+            </Link>
+            <Link
+              href="/pricing"
+              onClick={() => setOpen(false)}
+              className={
+                isActive("/pricing")
+                  ? "font-semibold text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }
+            >
+              Pricing
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setOpen(false)}
+              className={
+                isActive("/about")
+                  ? "font-semibold text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className={
+                isActive("/contact")
+                  ? "font-semibold text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }
+            >
+              Contact
+            </Link>
 
+            <div className="mt-2 flex flex-wrap gap-2">
+              <Link
+                href={`tel:${PHONE_TEL}`}
+                onClick={() => setOpen(false)}
+                className="inline-flex flex-1 items-center justify-center rounded-full border border-emerald-600 px-4 py-2 text-xs font-medium text-emerald-700 hover:bg-emerald-50"
+              >
+                Call: {PHONE_DISPLAY}
+              </Link>
+              <Link
+                href={`https://wa.me/${WHATSAPP_TEL}`}
+                target="_blank"
+                onClick={() => setOpen(false)}
+                className="inline-flex flex-1 items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-xs font-medium text-white shadow-md shadow-emerald-600/40 hover:bg-emerald-700"
+              >
+                WhatsApp
+              </Link>
+            </div>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

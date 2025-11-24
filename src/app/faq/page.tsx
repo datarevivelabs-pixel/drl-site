@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "FAQ | Data Revive Labs",
   description:
-    "Frequently asked questions about data recovery services at Data Revive Labs: pricing, timelines, success rates and how the process works.",
+    "Frequently asked questions about data recovery services at Data Revive Labs in Nairobi: pricing, timelines, success rates and how the process works.",
 };
 
 export default function FaqPage() {
@@ -32,7 +32,6 @@ export default function FaqPage() {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-6 max-w-4xl space-y-8">
           <div className="space-y-4 text-xs md:text-sm">
-            {/* Q1 */}
             <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h2 className="font-semibold mb-1 md:text-base text-sm">
                 How much does data recovery cost?
@@ -44,7 +43,6 @@ export default function FaqPage() {
               </p>
             </div>
 
-            {/* Q2 */}
             <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h2 className="font-semibold mb-1 md:text-base text-sm">
                 Do you charge if you can&apos;t recover any data?
@@ -57,7 +55,6 @@ export default function FaqPage() {
               </p>
             </div>
 
-            {/* Q3 */}
             <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h2 className="font-semibold mb-1 md:text-base text-sm">
                 How long does the recovery process take?
@@ -69,7 +66,6 @@ export default function FaqPage() {
               </p>
             </div>
 
-            {/* Q4 */}
             <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h2 className="font-semibold mb-1 md:text-base text-sm">
                 Is my data kept private and confidential?
@@ -81,7 +77,6 @@ export default function FaqPage() {
               </p>
             </div>
 
-            {/* Q5 */}
             <div className="rounded-2xl border bg-card p-5 shadow-sm">
               <h2 className="font-semibold mb-1 md:text-base text-sm">
                 Should I keep trying to turn the device on?
