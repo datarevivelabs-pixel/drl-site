@@ -1,29 +1,36 @@
 import "./globals.css";
 import type { Metadata } from "next";
-
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { Analytics } from "./ga";
 
 export const metadata: Metadata = {
   title: {
-    default: "Data Revive Labs | Professional Data Recovery in Kenya",
+    default: "Data Revive Labs | Professional Data Recovery in Nairobi",
     template: "%s | Data Revive Labs",
   },
   description:
-    "Professional data recovery services in Kenya. HDD / SSD, RAID, NAS, phones, and digital forensics. Fast diagnostics, confidentiality guaranteed.",
+    "Professional data recovery in Nairobi, Kenya. HDD/SSD, RAID/NAS, phones and digital forensics handled with strict confidentiality.",
   metadataBase: new URL("https://datarevivelabs.co.ke"),
   alternates: {
     canonical: "https://datarevivelabs.co.ke",
   },
+  manifest: "/manifest.json",
+  themeColor: "#047857",
   openGraph: {
-    title: "Data Revive Labs | Professional Data Recovery in Kenya",
+    title: "Data Revive Labs | Professional Data Recovery in Nairobi",
     description:
-      "Recover your important data from HDD, SSD, RAID, NAS, phones or servers. Nairobi-based data recovery experts serving Kenya.",
+      "We recover critical data from failed HDDs, SSDs, RAID/NAS systems and phones for individuals, SMEs and NGOs across Kenya.",
     url: "https://datarevivelabs.co.ke",
     siteName: "Data Revive Labs",
-    locale: "en_KE",
     type: "website",
+    locale: "en_KE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Data Revive Labs | Professional Data Recovery in Nairobi",
+    description:
+      "Fast, confidential data recovery for drives, phones and servers in Nairobi, Kenya.",
   },
 };
 
@@ -34,19 +41,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-background text-foreground antialiased">
-        <div className="flex min-h-screen flex-col">
-          {/* Global header with logo + nav */}
-          <Header />
-
-          {/* Page content */}
-          <main className="flex-1">{children}</main>
-
-          {/* Global footer */}
-          <Footer />
-        </div>
-
-        {/* Google Analytics */}
+      <head>
+        {/* Hard link so Chrome DevTools sees the manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#047857" />
+      </head>
+      <body className="bg-background text-foreground min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
         <Analytics />
       </body>
     </html>
