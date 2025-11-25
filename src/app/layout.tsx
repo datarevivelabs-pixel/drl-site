@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { Analytics } from "./ga";
+import { ScrollTopButton } from "./components/scroll-top";
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Hard link so Chrome DevTools sees the manifest */}
+        {/* Manifest + theme color for PWA/Chrome */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#047857" />
       </head>
@@ -50,6 +51,9 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* Scroll-to-top button on all pages */}
+        <ScrollTopButton />
+        {/* Google Analytics */}
         <Analytics />
       </body>
     </html>
