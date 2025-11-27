@@ -3,6 +3,61 @@
 import Link from "next/link";
 import Image from "next/image";
 
+/* ===========================
+   JSON-LD SCHEMA FOR HOMEPAGE
+   =========================== */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Data Revive Labs",
+  "url": "https://datarevivelabs.co.ke",
+  "image": "https://datarevivelabs.co.ke/logo.png",
+  "telephone": "+254768177714",
+  "priceRange": "KSh 6,000 - 200,000",
+  "description":
+    "Professional data recovery services in Kenya for HDDs, SSDs, RAID/NAS systems, phones, servers and digital forensics.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KE",
+    "addressRegion": "Nairobi",
+    "streetAddress": "Nairobi, Kenya"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": [
+    "https://instagram.com/datarevivelabs",
+    "https://facebook.com/datarevivelabs",
+    "https://tiktok.com/@datarevivelabs",
+    "https://x.com/datarevivelabs"
+  ],
+  "department": [
+    {
+      "@type": "ProfessionalService",
+      "name": "HDD & SSD Recovery",
+      "url": "https://datarevivelabs.co.ke/services/hdd-ssd"
+    },
+    {
+      "@type": "ProfessionalService",
+      "name": "RAID / NAS / Server Recovery",
+      "url": "https://datarevivelabs.co.ke/services/raid-nas"
+    },
+    {
+      "@type": "ProfessionalService",
+      "name": "Phone Data Recovery",
+      "url": "https://datarevivelabs.co.ke/services/phone-data"
+    },
+    {
+      "@type": "ProfessionalService",
+      "name": "Digital Forensics",
+      "url": "https://datarevivelabs.co.ke/services/forensics"
+    },
+    {
+      "@type": "ProfessionalService",
+      "name": "Emergency Recovery",
+      "url": "https://datarevivelabs.co.ke/services/emergency"
+    }
+  ]
+};
+
 export default function Home() {
   const scrollToServices = () => {
     const el = document.getElementById("services");
@@ -11,6 +66,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col bg-background text-foreground">
+      {/* JSON-LD for Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* HERO */}
       <section className="relative flex items-center justify-center text-center min-h-[80vh] overflow-hidden">
         {/* background comes from globals.css */}
@@ -27,7 +88,7 @@ export default function Home() {
 
           <p className="max-w-2xl mx-auto text-sm md:text-base text-muted-foreground mb-8">
             We help individuals, businesses and institutions recover critical
-            data from failed HDDs, SSDs, RAID/NAS systems, phones and more —
+            data from failed HDDs, SSDs, RAID/NAS systems, phones and more — 
             professionally and securely.
           </p>
 
@@ -49,8 +110,9 @@ export default function Home() {
           </div>
 
           <p className="text-xs md:text-sm text-muted-foreground">
-            Average diagnostic time: <span className="font-medium">3–6 hours</span>.
-            Emergency <span className="font-medium">24/7</span> available.
+            Average diagnostic time:{" "}
+            <span className="font-medium">3–6 hours</span>. Emergency{" "}
+            <span className="font-medium">24/7</span> available.
           </p>
         </div>
       </section>

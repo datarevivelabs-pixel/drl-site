@@ -4,6 +4,7 @@ import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { Analytics } from "./ga";
 import { ScrollTopButton } from "./components/scroll-top";
+import SeoSchema from "./seo/schema"; // ✅ <- JSON-LD component
 
 export const metadata: Metadata = {
   title: {
@@ -53,6 +54,8 @@ export default function RootLayout({
         <Footer />
         {/* Scroll-to-top button on all pages */}
         <ScrollTopButton />
+        {/* JSON-LD structured data for SEO */}
+        <SeoSchema />
         {/* Google Analytics */}
         <Analytics />
       </body>
