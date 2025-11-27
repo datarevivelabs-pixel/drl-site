@@ -3,61 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-/* ===========================
-   JSON-LD SCHEMA FOR HOMEPAGE
-   =========================== */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Data Revive Labs",
-  "url": "https://datarevivelabs.co.ke",
-  "image": "https://datarevivelabs.co.ke/logo.png",
-  "telephone": "+254768177714",
-  "priceRange": "KSh 6,000 - 200,000",
-  "description":
-    "Professional data recovery services in Kenya for HDDs, SSDs, RAID/NAS systems, phones, servers and digital forensics.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "KE",
-    "addressRegion": "Nairobi",
-    "streetAddress": "Nairobi, Kenya"
-  },
-  "openingHours": "Mo-Su 00:00-23:59",
-  "sameAs": [
-    "https://instagram.com/datarevivelabs",
-    "https://facebook.com/datarevivelabs",
-    "https://tiktok.com/@datarevivelabs",
-    "https://x.com/datarevivelabs"
-  ],
-  "department": [
-    {
-      "@type": "ProfessionalService",
-      "name": "HDD & SSD Recovery",
-      "url": "https://datarevivelabs.co.ke/services/hdd-ssd"
-    },
-    {
-      "@type": "ProfessionalService",
-      "name": "RAID / NAS / Server Recovery",
-      "url": "https://datarevivelabs.co.ke/services/raid-nas"
-    },
-    {
-      "@type": "ProfessionalService",
-      "name": "Phone Data Recovery",
-      "url": "https://datarevivelabs.co.ke/services/phone-data"
-    },
-    {
-      "@type": "ProfessionalService",
-      "name": "Digital Forensics",
-      "url": "https://datarevivelabs.co.ke/services/forensics"
-    },
-    {
-      "@type": "ProfessionalService",
-      "name": "Emergency Recovery",
-      "url": "https://datarevivelabs.co.ke/services/emergency"
-    }
-  ]
-};
-
 export default function Home() {
   const scrollToServices = () => {
     const el = document.getElementById("services");
@@ -66,12 +11,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col bg-background text-foreground">
-      {/* JSON-LD for Google */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* HERO */}
       <section className="relative flex items-center justify-center text-center min-h-[80vh] overflow-hidden">
         {/* background comes from globals.css */}
@@ -88,7 +27,7 @@ export default function Home() {
 
           <p className="max-w-2xl mx-auto text-sm md:text-base text-muted-foreground mb-8">
             We help individuals, businesses and institutions recover critical
-            data from failed HDDs, SSDs, RAID/NAS systems, phones and more — 
+            data from failed HDDs, SSDs, RAID/NAS systems, phones and more —
             professionally and securely.
           </p>
 
@@ -141,7 +80,7 @@ export default function Home() {
               <div className="relative h-44 w-full">
                 <Image
                   src="/services/hdd-ssd.png"
-                  alt="HDD & SSD Recovery"
+                  alt="HDD & SSD data recovery services in Nairobi, Kenya"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -169,7 +108,7 @@ export default function Home() {
               <div className="relative h-44 w-full">
                 <Image
                   src="/services/raid-nas.png"
-                  alt="RAID / NAS / Server Recovery"
+                  alt="RAID and NAS server data recovery in Kenya"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -197,7 +136,7 @@ export default function Home() {
               <div className="relative h-44 w-full">
                 <Image
                   src="/services/phone-data.png"
-                  alt="Phone data recovery"
+                  alt="Phone and tablet data recovery in Nairobi, Kenya"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -225,7 +164,7 @@ export default function Home() {
               <div className="relative h-44 w-full">
                 <Image
                   src="/services/forensics.png"
-                  alt="Digital forensics"
+                  alt="Digital forensics and evidence analysis in Kenya"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -253,7 +192,7 @@ export default function Home() {
               <div className="relative h-44 w-full">
                 <Image
                   src="/services/emergency.png"
-                  alt="Emergency data recovery"
+                  alt="Emergency 24/7 data recovery in Kenya"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -273,6 +212,33 @@ export default function Home() {
               </div>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS – SEO ESSENTIALS */}
+      <section className="border-t bg-muted/40 py-10">
+        <div className="container px-6 grid gap-4 text-center md:grid-cols-4">
+          <Link
+            href="/pricing"
+            className="text-sm text-emerald-600 hover:underline"
+          >
+            Pricing &amp; turnaround
+          </Link>
+          <Link href="/faq" className="text-sm text-emerald-600 hover:underline">
+            Common FAQs
+          </Link>
+          <Link
+            href="/process"
+            className="text-sm text-emerald-600 hover:underline"
+          >
+            Our recovery process
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm text-emerald-600 hover:underline"
+          >
+            Book a recovery
+          </Link>
         </div>
       </section>
     </main>

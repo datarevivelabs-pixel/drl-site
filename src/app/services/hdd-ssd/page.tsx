@@ -11,61 +11,9 @@ export const metadata: Metadata = {
   },
 };
 
-/* ===========================
-   JSON-LD FAQ FOR THIS PAGE
-   =========================== */
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What types of HDD problems can you recover?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "We recover data from hard drives with mechanical failure, bad sectors, clicking or grinding noises, firmware corruption, PCB damage and accidental formatting or deletion."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you recover data from SSDs that are not detected?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Yes. We handle SSD failures such as controller faults, dead drives with no power, firmware issues, wear-leveling problems and drives that disappear from BIOS or Disk Management."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is my data kept confidential?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Yes. All recovered data is treated as strictly confidential. Access is limited to the engineers working on your case and we never use your files for training or marketing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does HDD/SSD recovery take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Standard diagnostics normally take 3–6 hours. Most recoveries are completed within a few days depending on the level of damage. Emergency 24/7 options are available for urgent cases."
-      }
-    }
-  ]
-};
-
 export default function HddSsdRecoveryPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* JSON-LD FAQ for Google */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-
       {/* HERO / INTRO */}
       <section className="border-b bg-gradient-to-b from-background via-background to-muted/40 py-12 md:py-16">
         <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
@@ -81,11 +29,10 @@ export default function HddSsdRecoveryPage() {
             </h1>
 
             <p className="text-sm md:text-base text-muted-foreground">
-              We recover data from failed hard drives and SSDs used in
-              desktops, laptops, external enclosures and servers across Kenya.
-              Whether the drive is clicking, not detected or accidentally
-              formatted, we give you the best possible chance of getting your
-              data back.
+              We recover data from failed hard drives and SSDs used in desktops,
+              laptops, external enclosures and servers across Kenya. Whether the
+              drive is clicking, not detected or accidentally formatted, we give
+              you the best possible chance of getting your data back.
             </p>
 
             <ul className="grid gap-2 text-xs md:text-sm text-muted-foreground">
@@ -121,7 +68,7 @@ export default function HddSsdRecoveryPage() {
             <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] rounded-3xl border bg-card overflow-hidden shadow-lg">
               <Image
                 src="/services/hdd-ssd.png"
-                alt="HDD and SSD data recovery illustration"
+                alt="HDD and SSD data recovery services in Nairobi, Kenya"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 320px, (min-width: 768px) 260px, 220px"
@@ -161,16 +108,14 @@ export default function HddSsdRecoveryPage() {
               How our HDD &amp; SSD recovery works
             </h2>
             <ol className="space-y-2 text-xs md:text-sm text-muted-foreground list-decimal list-inside">
+              <li>You bring or send the drive to Data Revive Labs in Nairobi.</li>
               <li>
-                You bring or send the drive to Data Revive Labs in Nairobi.
+                We run a detailed diagnostic and share a report plus a fixed price
+                quote.
               </li>
               <li>
-                We run a detailed diagnostic and share a report plus a fixed
-                price quote.
-              </li>
-              <li>
-                If you approve, we perform the recovery using specialist tools
-                and clean handling procedures.
+                If you approve, we perform the recovery using specialist tools and
+                clean handling procedures.
               </li>
               <li>
                 We show you a file listing or sample so you can confirm the most
