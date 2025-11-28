@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { EmergencyBanner } from "./emergency-banner";
+import { EmergencyBanner } from "../components/ui/emergency-banner";
+import { CTA } from "../components/ui/cta";
 
 export const metadata: Metadata = {
   title: "Pricing | Data Recovery Services | Data Revive Labs",
@@ -317,12 +318,9 @@ export default function Pricing() {
 
         {/* CTA */}
         <section className="text-center mb-8">
-          <a
-            href="/contact"
-            className="inline-block bg-emerald-600 hover:bg-emerald-707 text-white px-8 py-3 rounded-lg text-lg font-medium"
-          >
+          <CTA href="/contact" size="lg">
             Request Free Evaluation
-          </a>
+          </CTA>
           <p className="mt-3 text-sm text-muted-foreground">
             Prefer to talk first? Call or WhatsApp{" "}
             <a

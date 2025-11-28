@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Data Recovery Nairobi | HDD, SSD & Phone Data Recovery – Data Revive Labs",
+    "Data Recovery Nairobi Kenya | HDD, SSD & RAID Recovery | Data Revive Labs",
   description:
     "Professional data recovery in Nairobi for HDD, SSD, external drives, RAID and phones. Private data recovery lab, no walk-ins – device drop-off by appointment or courier.",
   alternates: {
@@ -51,8 +51,7 @@ const faqJsonLd = {
       name: "Do you have a data recovery shop in Nairobi CBD?",
       acceptedAnswer: {
         "@type": "Answer",
-        text:
-          "No. Data Revive Labs operates as a private data recovery laboratory serving Nairobi and the rest of Kenya. We are not a general computer repair shop in the CBD. All device drop-offs are scheduled by appointment or shipped via courier.",
+        text: "No. Data Revive Labs operates as a private data recovery laboratory serving Nairobi and the rest of Kenya. We are not a general computer repair shop in the CBD. All device drop-offs are scheduled by appointment or shipped via courier.",
       },
     },
     {
@@ -60,8 +59,7 @@ const faqJsonLd = {
       name: "How do I send my device from Nairobi to your lab?",
       acceptedAnswer: {
         "@type": "Answer",
-        text:
-          "Start by contacting us via WhatsApp, call or the enquiry form. We pre-assess your case, then arrange a scheduled drop-off or pickup in Nairobi, or guide you on how to package and ship your device safely.",
+        text: "Start by contacting us via WhatsApp, call or the enquiry form. We pre-assess your case, then arrange a scheduled drop-off or pickup in Nairobi, or guide you on how to package and ship your device safely.",
       },
     },
     {
@@ -69,8 +67,7 @@ const faqJsonLd = {
       name: "Can you recover data from a dead or clicking hard drive?",
       acceptedAnswer: {
         "@type": "Answer",
-        text:
-          "Yes, many clicking or non-detecting hard drives can be recovered using specialist tools and safe imaging procedures. The most important step is to power the drive off and avoid repeated attempts, then contact us as soon as possible.",
+        text: "Yes, many clicking or non-detecting hard drives can be recovered using specialist tools and safe imaging procedures. The most important step is to power the drive off and avoid repeated attempts, then contact us as soon as possible.",
       },
     },
     {
@@ -78,8 +75,7 @@ const faqJsonLd = {
       name: "Do you offer emergency data recovery for Nairobi businesses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text:
-          "Yes. For urgent business cases in Nairobi, we offer priority handling, extended hours and faster evaluation. Contact us by phone or WhatsApp and mention that it is an emergency business case.",
+        text: "Yes. For urgent business cases in Nairobi, we offer priority handling, extended hours and faster evaluation. Contact us by phone or WhatsApp and mention that it is an emergency business case.",
       },
     },
   ],
@@ -158,7 +154,7 @@ export default function NairobiDataRecovery() {
             </ul>
           </div>
           <div className="border rounded-xl p-5 shadow-sm bg-background">
-            <h3 className="font-semibold mb-2">SSDs & NVMe</h3>
+            <h3 className="font-semibold mb-2">SSDs &amp; NVMe</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>• SATA SSD and NVMe M.2</li>
               <li>• Not detected or very slow</li>
@@ -167,7 +163,7 @@ export default function NairobiDataRecovery() {
             </ul>
           </div>
           <div className="border rounded-xl p-5 shadow-sm bg-background">
-            <h3 className="font-semibold mb-2">Phones & RAID</h3>
+            <h3 className="font-semibold mb-2">Phones &amp; RAID</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>• Phones with broken screens</li>
               <li>• Water or physical damage</li>
@@ -261,14 +257,14 @@ export default function NairobiDataRecovery() {
               </li>
               <li>
                 <span className="font-medium text-foreground">
-                  Step 4 – Quote & approval:
+                  Step 4 – Quote &amp; approval:
                 </span>{" "}
                 You receive a cost range based on the case type. We only proceed
                 with your approval.
               </li>
               <li>
                 <span className="font-medium text-foreground">
-                  Step 5 – Recovery & verification:
+                  Step 5 – Recovery &amp; verification:
                 </span>{" "}
                 We attempt recovery, verify the result, and prepare your data
                 for delivery on new media or via secure transfer.

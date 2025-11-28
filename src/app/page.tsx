@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { CTA } from "./components/ui/cta";
 
 export default function Home() {
   const scrollToServices = () => {
@@ -11,17 +12,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col bg-background text-foreground">
-
-      {/* =======================
-          HERO
-      ======================== */}
+      {/* HERO */}
       <section className="relative flex items-center justify-center text-center min-h-[80vh] overflow-hidden">
+        {/* background comes from globals.css */}
         <div className="container px-6 text-foreground">
           <p className="tracking-[0.25em] text-xs md:text-sm text-emerald-600 mb-4 uppercase">
             DATA RECOVERY • KENYA
           </p>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight max-w-3xl mx-auto mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-tight max-w-3xl mx-auto mb-4">
             Fast, confidential{" "}
             <span className="text-emerald-500">data recovery</span> for drives,
             phones &amp; servers.
@@ -34,13 +33,12 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
-            >
+            {/* Primary CTA using shared component */}
+            <CTA href="/contact" size="lg">
               Book a free assessment
-            </Link>
+            </CTA>
 
+            {/* Secondary scroll button */}
             <button
               type="button"
               onClick={scrollToServices}
@@ -58,9 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =======================
-          FEATURED SERVICES
-      ======================== */}
+      {/* FEATURED SERVICES */}
       <section
         id="services"
         className="relative border-t bg-muted/40 py-12 md:py-16"
@@ -104,7 +100,7 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* RAID */}
+            {/* RAID / NAS */}
             <Link
               href="/services/raid-nas"
               className="group relative flex flex-col rounded-3xl border bg-card overflow-hidden shadow-sm hover:shadow-md transition"
@@ -132,7 +128,7 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Phone */}
+            {/* Phone data */}
             <Link
               href="/services/phone-data"
               className="group relative flex flex-col rounded-3xl border bg-card overflow-hidden shadow-sm hover:shadow-md transition"
@@ -219,22 +215,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =======================
-          INTERNAL LINKS
-          *** SEO POWER SECTION ***
-      ======================== */}
+      {/* INTERNAL LINKS – SEO ESSENTIALS */}
       <section className="border-t bg-muted/40 py-10">
-        <div className="container px-6 grid gap-4 text-center md:grid-cols-5">
+        <div className="container px-6 grid gap-4 text-center md:grid-cols-4">
           <Link
             href="/pricing"
             className="text-sm text-emerald-600 hover:underline"
           >
             Pricing &amp; turnaround
           </Link>
-          <Link
-            href="/faq"
-            className="text-sm text-emerald-600 hover:underline"
-          >
+          <Link href="/faq" className="text-sm text-emerald-600 hover:underline">
             Common FAQs
           </Link>
           <Link
@@ -248,14 +238,6 @@ export default function Home() {
             className="text-sm text-emerald-600 hover:underline"
           >
             Book a recovery
-          </Link>
-
-          {/* 🔥 NEW FOR SEO — THE NAIROBI PAGE LINK */}
-          <Link
-            href="/nairobi-data-recovery"
-            className="text-sm text-emerald-600 hover:underline"
-          >
-            Nairobi Data Recovery
           </Link>
         </div>
       </section>
