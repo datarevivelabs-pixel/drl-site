@@ -1,173 +1,289 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { CTA } from "../../components/ui/cta";
 
 export const metadata: Metadata = {
-  title: "Digital Forensics & Evidence Recovery | Data Revive Labs Nairobi",
+  title: "Digital Forensics & Evidence Recovery | Data Revive Labs Kenya",
   description:
-    "Digital forensics services in Nairobi, Kenya. Evidence preservation, timeline analysis, deleted file recovery and expert reports for legal, HR and internal investigations.",
+    "Digital forensics support in Kenya: data extraction, evidence preservation and timeline reconstruction for phones, drives and servers. Technician-only lab, chain-of-custody focused.",
   alternates: {
     canonical: "https://datarevivelabs.co.ke/services/forensics",
   },
 };
 
-export default function ForensicsPage() {
+export default function ForensicsRecovery() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      {/* HERO / INTRO */}
-      <section className="border-b bg-gradient-to-b from-background via-background to-muted/40 py-12 md:py-16">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-          {/* TEXT SIDE */}
-          <div className="space-y-4">
-            <p className="text-[11px] md:text-xs tracking-[0.25em] text-emerald-500 uppercase">
-              SERVICES • DIGITAL FORENSICS
+    <main className="min-h-screen bg-background">
+      {/* HERO */}
+      <section className="border-b bg-gradient-to-b from-background to-emerald-50/40">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-[1.4fr_1fr] items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-emerald-600 mb-2">
+              DIGITAL FORENSICS
             </p>
-
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-              Digital forensics for{" "}
-              <span className="text-emerald-500">investigations &amp; disputes</span>.
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Digital Forensics &amp; Evidence Recovery
             </h1>
-
-            <p className="text-sm md:text-base text-muted-foreground">
-              We provide digital forensics support for legal teams, HR
-              departments, auditors and private clients across Kenya. Our focus
-              is on preserving evidence correctly, analysing activity and
-              presenting findings in a clear, defensible way.
+            <p className="text-sm md:text-base text-muted-foreground mb-4">
+              We help legal teams, organisations and individuals extract, secure
+              and analyse digital evidence from phones, computers, drives and
+              storage systems in a controlled lab environment.
+            </p>
+            <p className="text-sm md:text-base text-muted-foreground mb-6">
+              Our focus is on careful preservation, structured extraction and
+              clear reporting &mdash; not general I.T. support or informal
+              &quot;hacking&quot; services.
             </p>
 
-            <ul className="grid gap-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Evidence collection from laptops, phones and servers</li>
-              <li>• Timeline reconstruction and user activity analysis</li>
-              <li>• Recovery of deleted files, logs and communications</li>
-              <li>• Expert reports for court, HR and internal use</li>
-            </ul>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
+            <div className="flex flex-wrap gap-3">
+              <CTA href="/contact" size="lg">
+                Enquire about a forensics case
+              </CTA>
+              <CTA
+                href="https://wa.me/254768177714?text=Hi%20Data%20Revive%20Labs%2C%20I%20have%20a%20digital%20forensics%20or%20evidence%20case."
+                variant="outline"
+                size="md"
               >
-                Discuss a forensics case
-              </Link>
-              <Link
-                href="https://wa.me/254768177714"
-                target="_blank"
-                className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-              >
-                Confidential WhatsApp enquiry →
-              </Link>
+                WhatsApp a technician
+              </CTA>
             </div>
 
-            <p className="text-[11px] md:text-xs text-muted-foreground">
-              We recommend contacting us before devices are powered on,
-              reformatted or examined by non-specialists to avoid contaminating
-              evidence.
+            <p className="mt-3 text-xs md:text-sm text-muted-foreground">
+              When you contact us, avoid sharing sensitive details over chat.
+              We&apos;ll guide you on the safest way to proceed.
             </p>
           </div>
 
-          {/* IMAGE SIDE */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] rounded-3xl border bg-card overflow-hidden shadow-lg">
-              <Image
-                src="/services/forensics.png"
-                alt="Digital forensics and evidence analysis services in Nairobi, Kenya"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 320px, (min-width: 768px) 260px, 220px"
-                priority
-              />
-            </div>
+          <div className="relative h-56 md:h-72 lg:h-80 w-full">
+            <Image
+              src="/services/forensics.png"
+              alt="Digital forensics and evidence analysis in Kenya"
+              fill
+              className="rounded-2xl object-cover shadow-md"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
-      {/* SECTIONS */}
-      <section className="py-10 md:py-14">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-2">
-          {/* LEFT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              Typical digital forensics scenarios
-            </h2>
-            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Suspected data theft by a departing employee</li>
-              <li>• Internal fraud, misuse of company systems or policy breaches</li>
-              <li>• Investigating harassment, blackmail or online threats</li>
-              <li>• Verifying authenticity of documents, emails or messages</li>
-              <li>• Assisting legal teams with electronic disclosure (e-discovery)</li>
-            </ul>
+      {/* WHAT WE HELP WITH */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold mb-3">
+            Types of Digital Forensics Work We Support
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Every matter is different, but these are common areas where digital
+            forensics can assist.
+          </p>
+        </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Every case is different. We start by understanding your objectives
-              and the questions that need answers, then plan a forensically-sound
-              approach that preserves integrity while focusing on relevant data.
+        <div className="grid gap-6 md:grid-cols-3 text-sm md:text-base text-muted-foreground">
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Mobile device evidence
             </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>WhatsApp and SMS communication history</li>
+              <li>Call logs and contact lists</li>
+              <li>Location traces and device usage timelines</li>
+              <li>Photos, videos and file metadata</li>
+            </ul>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              How our digital forensics process works
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Computer &amp; storage analysis
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Activity timelines on laptops and desktops</li>
+              <li>Removable media and external drive usage</li>
+              <li>Selected file recovery and verification</li>
+              <li>System event and log review</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Incident &amp; dispute support
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Internal policy or HR investigations</li>
+              <li>Business disputes where data is key</li>
+              <li>Selected support for legal and regulatory matters</li>
+              <li>Preservation of data for potential court use</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* LAB APPROACH & CHAIN OF CUSTODY */}
+      <section className="bg-muted/40 border-y">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              Lab-Based, Evidence-Focused Approach
             </h2>
-            <ol className="space-y-2 text-xs md:text-sm text-muted-foreground list-decimal list-inside">
+            <p className="text-sm md:text-base text-muted-foreground mb-4">
+              Our work is carried out in a technician-only lab where we control
+              who handles evidence and how it is accessed. The primary goals are
+              to preserve integrity and document what was done.
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-muted-foreground">
               <li>
-                We consult with you to understand the incident, timeline and
-                any legal or HR context.
+                Prefer imaging over working on original media wherever possible.
               </li>
               <li>
-                Devices and accounts are identified, secured and imaged using
-                forensically-sound methods.
+                Use structured methods instead of ad-hoc &quot;testing&quot; or random
+                tools.
               </li>
               <li>
-                We examine file systems, logs, communications and other artefacts
-                to answer defined questions.
+                Focus on extracting what is necessary to answer specific
+                questions.
               </li>
               <li>
-                Findings are documented with clear timelines, screenshots and
-                where needed, chain-of-custody details.
+                Maintain internal notes on procedures used and observations
+                made.
+              </li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              Chain of Custody &amp; Handling
+            </h2>
+            <p className="mb-3">
+              Good digital forensics depends on clear handling and documentation.
+              While we are not a law firm, we aim to support your chain-of-custody
+              needs by:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Recording when devices or media are received and returned.</li>
+              <li>Keeping devices in a controlled lab environment.</li>
+              <li>
+                Using write-blocking or imaging where appropriate to reduce
+                changes to original media.
               </li>
               <li>
-                We provide a written report and, if required, can brief your
-                legal or HR team on the technical aspects.
+                Providing summaries of what was requested and what processes
+                were followed.
+              </li>
+            </ul>
+            <p className="mt-3">
+              Your legal team or advisor should guide how our work and reports
+              are incorporated into a broader case strategy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS & SCOPE LIMITS */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              Typical Digital Forensics Workflow
+            </h2>
+            <ol className="list-decimal pl-5 space-y-2 text-sm md:text-base text-muted-foreground">
+              <li>
+                <span className="font-medium text-foreground">Scoping:</span>{" "}
+                we discuss the matter with you or your representative and agree
+                on what needs to be examined.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Intake &amp; preservation:
+                </span>{" "}
+                devices are received, labelled and stored; imaging starts where
+                relevant.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Targeted extraction:
+                </span>{" "}
+                we focus on specific apps, time ranges, conversations or file
+                types.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Analysis &amp; timeline building:
+                </span>{" "}
+                data is organised into timelines or structured findings where
+                appropriate.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Reporting &amp; handover:
+                </span>{" "}
+                results are summarised and provided along with any agreed media
+                copies.
               </li>
             </ol>
+          </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              We work discreetly and can coordinate with your existing legal
-              counsel or investigators. Our role is to provide accurate,
-              technically-sound evidence and analysis.
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              Scope, Limitations &amp; Pricing
+            </h2>
+            <p className="mb-3">
+              Every case is unique. Some key points to understand:
             </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                We do <span className="font-medium text-foreground">not</span>{" "}
+                provide legal advice or act as your legal representative.
+              </li>
+              <li>
+                We focus on technical extraction and analysis, working with your
+                lawyer or advisor where applicable.
+              </li>
+              <li>
+                Certain encrypted or locked devices may have limited recovery
+                options, even with full consent.
+              </li>
+              <li>
+                Pricing depends on device types, volume of data and analysis
+                depth needed.
+              </li>
+            </ul>
+            <p className="mt-3">
+              For many straightforward extraction-only tasks, pricing is similar
+              to advanced recovery cases. Complex, long-running analysis work is
+              quoted individually.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <CTA href="/pricing" size="md">
+                View general pricing ranges
+              </CTA>
+              <CTA href="/contact" variant="outline" size="sm">
+                Discuss a specific forensics matter
+              </CTA>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA STRIP */}
-      <section className="border-t bg-muted/40 py-8 md:py-10">
-        <div className="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-sm md:text-base font-semibold">
-              Need discreet digital forensics support?
-            </h2>
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Reach out with a brief description of the situation and we&apos;ll
-              advise on safe next steps.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
-            >
-              Start a confidential enquiry
-            </Link>
-            <Link
-              href="https://wa.me/254768177714"
-              target="_blank"
-              className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-            >
-              WhatsApp a quick question
-            </Link>
-          </div>
+      {/* FINAL CTA */}
+      <section className="container px-6 pb-12 md:pb-16 text-center">
+        <h2 className="text-2xl font-semibold mb-3">
+          Need help preserving or examining digital evidence?
+        </h2>
+        <p className="text-sm md:text-base text-muted-foreground mb-6">
+          Reach out to a data recovery technician and we&apos;ll help you
+          understand what may be possible from the devices or media you have.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <CTA href="/contact" size="lg">
+            Enquire about digital forensics
+          </CTA>
+          <CTA
+            href="https://wa.me/254768177714?text=Hi%20Data%20Revive%20Labs%2C%20I%20have%20a%20digital%20forensics%20case."
+            variant="outline"
+            size="md"
+          >
+            WhatsApp about a forensics case
+          </CTA>
         </div>
       </section>
     </main>

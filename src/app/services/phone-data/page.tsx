@@ -1,172 +1,277 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { CTA } from "../../components/ui/cta";
 
 export const metadata: Metadata = {
-  title: "Phone & Tablet Data Recovery | Data Revive Labs Nairobi",
+  title: "Phone & Tablet Data Recovery | Data Revive Labs Kenya",
   description:
-    "Professional phone and tablet data recovery in Nairobi, Kenya. Dead phones, liquid damage, failed updates, corrupted storage and deleted files.",
+    "Professional phone and tablet data recovery in Kenya. Dead phones, broken screens, liquid damage and failed updates handled in a private data recovery lab.",
   alternates: {
     canonical: "https://datarevivelabs.co.ke/services/phone-data",
   },
 };
 
-export default function PhoneDataRecoveryPage() {
+export default function PhoneDataRecovery() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      {/* HERO / INTRO */}
-      <section className="border-b bg-gradient-to-b from-background via-background to-muted/40 py-12 md:py-16">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-          {/* TEXT SIDE */}
-          <div className="space-y-4">
-            <p className="text-[11px] md:text-xs tracking-[0.25em] text-emerald-500 uppercase">
-              SERVICES • PHONE &amp; TABLET DATA
+    <main className="min-h-screen bg-background">
+      {/* HERO */}
+      <section className="border-b bg-gradient-to-b from-background to-emerald-50/40">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-[1.4fr_1fr] items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-emerald-600 mb-2">
+              PHONES • TABLETS
             </p>
-
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-              Phone &amp; tablet data recovery for{" "}
-              <span className="text-emerald-500">photos, chats &amp; files</span>.
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Phone &amp; Tablet Data Recovery
             </h1>
-
-            <p className="text-sm md:text-base text-muted-foreground">
-              We recover data from Android phones, iPhones and tablets that are
-              dead, water-damaged, stuck on the logo, or not recognised by a
-              computer. From family photos to business WhatsApp chats, we help
-              you get back what matters most.
+            <p className="text-sm md:text-base text-muted-foreground mb-4">
+              Your phone will not turn on, the screen is completely dead, or an
+              update has left your data inaccessible. We help recover photos,
+              WhatsApp chats, contacts and other important data from many common
+              Android and iOS failures.
+            </p>
+            <p className="text-sm md:text-base text-muted-foreground mb-6">
+              All cases are handled in a private, technician-only lab. We focus
+              on safe extraction of your data, not general phone repair or quick
+              screen swaps.
             </p>
 
-            <ul className="grid gap-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Dead or boot-looping Android and iOS devices</li>
-              <li>• Liquid damage and broken screens that no longer respond</li>
-              <li>• Failed OS updates and stuck-on-logo issues</li>
-              <li>• Corrupted internal storage or SD cards</li>
-            </ul>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
+            <div className="flex flex-wrap gap-3">
+              <CTA href="/contact" size="lg">
+                Start a phone recovery case
+              </CTA>
+              <CTA
+                href="https://wa.me/254768177714?text=Hi%20Data%20Revive%20Labs%2C%20I%20need%20help%20with%20phone%20data%20recovery."
+                variant="outline"
+                size="md"
               >
-                Book a phone assessment
-              </Link>
-              <Link
-                href="https://wa.me/254768177714"
-                target="_blank"
-                className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-              >
-                Send device details on WhatsApp →
-              </Link>
+                WhatsApp a technician
+              </CTA>
             </div>
 
-            <p className="text-[11px] md:text-xs text-muted-foreground">
-              The sooner you switch off a damaged phone, the better the chance
-              of a successful recovery. Avoid repeated charge and power attempts.
+            <p className="mt-3 text-xs md:text-sm text-muted-foreground">
+              When you contact us, mention the phone model, what happened and
+              what data matters most (e.g. photos, WhatsApp, contacts).
             </p>
           </div>
 
-          {/* IMAGE SIDE */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] rounded-3xl border bg-card overflow-hidden shadow-lg">
-              <Image
-                src="/services/phone-data.png"
-                alt="Phone and tablet data recovery services in Nairobi, Kenya"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 320px, (min-width: 768px) 260px, 220px"
-                priority
-              />
-            </div>
+          <div className="relative h-56 md:h-72 lg:h-80 w-full">
+            <Image
+              src="/services/phone-data.png"
+              alt="Phone and tablet data recovery in Kenya"
+              fill
+              className="rounded-2xl object-cover shadow-md"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
-      {/* SECTIONS */}
-      <section className="py-10 md:py-14">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-2">
-          {/* LEFT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              Common phone &amp; tablet issues we see
-            </h2>
-            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Phone will not power on after a fall, short or water spill.</li>
-              <li>• Device stuck on logo, recovery mode or constant reboot loop.</li>
-              <li>• Screen is completely dead but you need data inside.</li>
-              <li>• Device says &quot;storage corrupted&quot; or cannot access files.</li>
-              <li>• SD card shows as empty or needs to be formatted.</li>
-            </ul>
+      {/* COMMON CASES */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold mb-3">
+            Common Phone &amp; Tablet Problems We See
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Every model and failure type is different, but these are some of the
+            most common situations we help with.
+          </p>
+        </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Many of these cases are still recoverable if the right steps are
-              taken early. Continuing to power a liquid-damaged device can cause
-              corrosion that makes recovery more difficult.
+        <div className="grid gap-6 md:grid-cols-3 text-sm md:text-base text-muted-foreground">
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Display &amp; physical damage
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Screen completely dead, no touch</li>
+              <li>Phone powers on but stays black</li>
+              <li>Broken or unresponsive touch panel</li>
+              <li>Housing bent or heavily damaged</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Liquid &amp; power problems
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Water or liquid spill on the phone</li>
+              <li>Phone keeps restarting or boot-looping</li>
+              <li>Won’t charge or stays stuck on logo screen</li>
+              <li>Phone only shows recovery / error mode</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Software &amp; update failures
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Failed system updates or factory resets</li>
+              <li>Corrupted OS after flashing or rooting</li>
+              <li>Locked-out devices where account access is available</li>
+              <li>Stuck at loading / spinning screen</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE CAN RECOVER */}
+      <section className="bg-muted/40 border-y">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              What Kind of Data Can Often Be Recovered?
+            </h2>
+            <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-muted-foreground">
+              <li>Photos and videos from internal storage</li>
+              <li>WhatsApp messages, attachments and call logs</li>
+              <li>Contacts, call history and SMS (where still stored on device)</li>
+              <li>Documents, recordings and downloads</li>
+              <li>In some cases, app data and notes (depends on model)</li>
+            </ul>
+            <p className="mt-3 text-sm md:text-base text-muted-foreground">
+              Recovery possibilities depend heavily on the specific phone model,
+              encryption status and what has happened since the failure.
+              Sharing accurate details helps us estimate your chances more
+              clearly.
             </p>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              How our phone data recovery works
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              Important Things to Avoid
             </h2>
-            <ol className="space-y-2 text-xs md:text-sm text-muted-foreground list-decimal list-inside">
+            <ul className="list-disc pl-5 space-y-2">
               <li>
-                We inspect the phone or tablet and identify whether the failure
-                is physical, logical or both.
+                Do not keep trying to turn on a phone that{" "}
+                <span className="font-medium text-foreground">has liquid damage</span>.
               </li>
               <li>
-                Where needed, we repair the board only enough to access the data,
-                using microsoldering and specialist tools.
+                Avoid repeated factory resets or &quot;wipe data&quot; attempts &mdash;{" "}
+                these often permanently erase recoverable content.
               </li>
               <li>
-                We create a full image of the storage in read-only mode to
-                protect the original data.
+                Do not give the phone to random flashing / unlocking shops if
+                your main goal is data, not repair.
               </li>
               <li>
-                Data such as photos, videos, documents and app data (where
-                possible) is extracted from the image.
+                If the device is linked to cloud backups (Google, iCloud, etc.),
+                do not delete or reset those accounts until we assess the case.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS & PRICING */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              How Phone Data Recovery Works
+            </h2>
+            <ol className="list-decimal pl-5 space-y-2 text-sm md:text-base text-muted-foreground">
+              <li>
+                <span className="font-medium text-foreground">Case review:</span>{" "}
+                we discuss the model, what happened, and what you need back.
               </li>
               <li>
-                You review the recovered data set, then we transfer it to a new
-                device or external drive.
+                <span className="font-medium text-foreground">
+                  Lab assessment:
+                </span>{" "}
+                we inspect the device and determine the safest extraction
+                method.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Data access attempt:
+                </span>{" "}
+                depending on the failure, we may temporarily repair only what is
+                necessary to access the storage.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Extraction &amp; verification:
+                </span>{" "}
+                we extract target data (photos, chats, etc.) and verify it with
+                you.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Delivery &amp; backup:
+                </span>{" "}
+                your data is copied to a new device, drive or secure backup
+                target.
               </li>
             </ol>
+          </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              In some cases, especially where accounts and encryption are
-              involved, we will need your PIN/password or iCloud/Google login to
-              decrypt and access the data lawfully.
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              Phone Data Recovery – Typical Pricing
+            </h2>
+            <p className="mb-3">
+              Pricing depends on model, damage and how much work is required to
+              access storage. As a general guide:
             </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Logical / minor software issues: from{" "}
+                <span className="font-medium text-foreground">KSh 8,500</span>
+              </li>
+              <li>
+                Screen-dead but powering devices: from{" "}
+                <span className="font-medium text-foreground">KSh 12,500</span>
+              </li>
+              <li>
+                Heavy damage / liquid / board-level work: from{" "}
+                <span className="font-medium text-foreground">KSh 20,000+</span>
+              </li>
+            </ul>
+            <p className="mt-3">
+              For pure logical cases, we often follow a{" "}
+              <span className="font-medium text-foreground">
+                &quot;no recovery, no payment&quot;
+              </span>{" "}
+              approach. For hardware and board-level work, a lab attempt fee may
+              apply and is agreed upfront.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <CTA href="/pricing" size="md">
+                View full pricing ranges
+              </CTA>
+              <CTA href="/process" variant="outline" size="sm">
+                See our recovery process
+              </CTA>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA STRIP */}
-      <section className="border-t bg-muted/40 py-8 md:py-10">
-        <div className="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-sm md:text-base font-semibold">
-              Need data from a dead or damaged phone?
-            </h2>
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Tell us the phone model and what happened, and we&apos;ll advise on
-              realistic recovery options.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
-            >
-              Talk to a technician
-            </Link>
-            <Link
-              href="https://wa.me/254768177714"
-              target="_blank"
-              className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-            >
-              WhatsApp a quick question
-            </Link>
-          </div>
+      {/* FINAL CTA */}
+      <section className="container px-6 pb-12 md:pb-16 text-center">
+        <h2 className="text-2xl font-semibold mb-3">
+          Lost access to photos, WhatsApp or contacts on your phone?
+        </h2>
+        <p className="text-sm md:text-base text-muted-foreground mb-6">
+          Power the phone off and speak to a data recovery technician. We&apos;ll
+          help you understand your options before you take any risky steps.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <CTA href="/contact" size="lg">
+            Start a phone recovery enquiry
+          </CTA>
+          <CTA
+            href="https://wa.me/254768177714?text=Hi%20Data%20Revive%20Labs%2C%20I%20need%20help%20with%20phone%20data%20recovery."
+            variant="outline"
+            size="md"
+          >
+            WhatsApp about phone data
+          </CTA>
         </div>
       </section>
     </main>

@@ -1,171 +1,288 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { CTA } from "../../components/ui/cta";
 
 export const metadata: Metadata = {
-  title: "Emergency & After-Hours Data Recovery | Data Revive Labs Nairobi",
+  title: "Emergency 24/7 Data Recovery | Data Revive Labs Kenya",
   description:
-    "24/7 emergency data recovery in Nairobi, Kenya. Critical outages, RAID failures and time-sensitive data loss handled with priority response.",
+    "Priority emergency data recovery in Kenya for failed servers, RAID, laptops and critical business systems. Technician-only lab, arranged by call, WhatsApp or courier.",
   alternates: {
     canonical: "https://datarevivelabs.co.ke/services/emergency",
   },
 };
 
-export default function EmergencyRecoveryPage() {
+export default function EmergencyRecovery() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      {/* HERO / INTRO */}
-      <section className="border-b bg-gradient-to-b from-background via-background to-muted/40 py-12 md:py-16">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-          {/* TEXT SIDE */}
-          <div className="space-y-4">
-            <p className="text-[11px] md:text-xs tracking-[0.25em] text-emerald-500 uppercase">
-              SERVICES • EMERGENCY / AFTER-HOURS
+    <main className="min-h-screen bg-background">
+      {/* HERO */}
+      <section className="border-b bg-gradient-to-b from-background to-emerald-50/40">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-[1.4fr_1fr] items-center">
+          {/* Text side */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-emerald-600 mb-2">
+              EMERGENCY • 24/7
             </p>
-
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-              Emergency data recovery for{" "}
-              <span className="text-emerald-500">time-critical cases</span>.
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Emergency &amp; After-Hours Data Recovery
             </h1>
-
-            <p className="text-sm md:text-base text-muted-foreground">
-              When every hour matters, we provide immediate response for hard
-              drives, RAID/NAS arrays, phones and servers. Our emergency service
-              prioritises diagnostics, safe handling and rapid action to minimise
-              downtime and data loss.
+            <p className="text-sm md:text-base text-muted-foreground mb-4">
+              A server has gone down, a RAID will not mount, or a laptop with
+              critical work has failed hours before a deadline. We provide
+              priority handling for urgent data loss cases across Kenya.
+            </p>
+            <p className="text-sm md:text-base text-muted-foreground mb-6">
+              All emergency cases are handled in a dedicated, technician-only
+              lab. We stabilise your media first, then focus on recovering the
+              most important data as quickly and safely as possible.
             </p>
 
-            <ul className="grid gap-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Business outages and urgent RAID/NAS failures</li>
-              <li>• Boot failures on critical workstations and laptops</li>
-              <li>• Dead external drives containing project files</li>
-              <li>• Last-minute deadlines with no backups</li>
-            </ul>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
+            <div className="flex flex-wrap gap-3">
+              <CTA href="tel:+254768177714" size="lg">
+                Call 0768 177 714 (urgent)
+              </CTA>
+              <CTA
+                href="https://wa.me/254768177714?text=Hi%20Data%20Revive%20Labs%2C%20I%20have%20an%20urgent%20data%20loss%20case."
+                variant="outline"
+                size="md"
               >
-                Request priority diagnostic
-              </Link>
-              <Link
-                href="https://wa.me/254768177714"
-                target="_blank"
-                className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-              >
-                WhatsApp now →
-              </Link>
+                WhatsApp a technician
+              </CTA>
             </div>
 
-            <p className="text-[11px] md:text-xs text-muted-foreground">
-              Priority cases are queue-skipped and processed continuously until
-              recovery is complete wherever possible.
+            <p className="mt-3 text-xs md:text-sm text-muted-foreground">
+              Available for urgent cases{" "}
+              <span className="font-medium">evenings, weekends and holidays</span>{" "}
+              by prior arrangement.
             </p>
           </div>
 
-          {/* IMAGE SIDE */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] rounded-3xl border bg-card overflow-hidden shadow-lg">
-              <Image
-                src="/services/emergency.png"
-                alt="Emergency data recovery and priority services in Kenya"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 320px, (min-width: 768px) 260px, 220px"
-                priority
-              />
-            </div>
+          {/* Image */}
+          <div className="relative h-56 md:h-72 lg:h-80 w-full">
+            <Image
+              src="/services/emergency.png"
+              alt="Emergency 24/7 data recovery services in Kenya"
+              fill
+              className="rounded-2xl object-cover shadow-md"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
-      {/* SECTIONS */}
-      <section className="py-10 md:py-14">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-2">
-          {/* LEFT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              When should you request emergency service?
-            </h2>
-            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Loss of access stops your business from operating</li>
-              <li>• A project deadline depends on specific files</li>
-              <li>• Your server or NAS fails and the team is offline</li>
-              <li>• A single damaged disk risks permanent data loss</li>
-              <li>• You cannot recreate or re-download the data</li>
-            </ul>
+      {/* WHEN IT'S AN EMERGENCY */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold mb-3">
+            When to Treat a Case as Emergency
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Not every failure needs emergency handling. We recommend treating
+            your case as urgent if one or more of the following apply:
+          </p>
+        </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              In these cases, speed matters. Each attempt to reboot, rebuild or
-              format the device increases risk. Shut it down and contact us
-              immediately.
+        <div className="grid gap-6 md:grid-cols-3 text-sm md:text-base text-muted-foreground">
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Business &amp; operations
             </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Production server or NAS is offline</li>
+              <li>Accounting, ERP or POS data is inaccessible</li>
+              <li>Failure is blocking staff or customers</li>
+            </ul>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              How our emergency recovery process works
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Deadlines &amp; obligations
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Upcoming court or audit deadlines</li>
+              <li>Project submissions or client deliveries</li>
+              <li>Loss of files would cause penalties or fines</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              High-value or irreplaceable data
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Critical research, production or design data</li>
+              <li>Key financial or legal evidence</li>
+              <li>Backups have also failed or are incomplete</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW EMERGENCY HANDLING WORKS */}
+      <section className="bg-muted/40 border-y">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              How We Handle Emergency Cases
             </h2>
-            <ol className="space-y-2 text-xs md:text-sm text-muted-foreground list-decimal list-inside">
+            <ol className="list-decimal pl-5 space-y-2 text-sm md:text-base text-muted-foreground">
               <li>
-                We gather symptoms, device type and any recent actions (power
-                loss, rebuild, password, update, etc.)
+                <span className="font-medium text-foreground">
+                  Call or WhatsApp:
+                </span>{" "}
+                we quickly review what has failed, what data is needed and what
+                has already been tried.
               </li>
               <li>
-                You drop off or courier the device to our Nairobi lab — or for
-                on-site cases we dispatch a technician.
+                <span className="font-medium text-foreground">
+                  Safe shutdown &amp; stabilisation:
+                </span>{" "}
+                we guide you on powering down systems safely to avoid further
+                damage.
               </li>
               <li>
-                We stabilise the hardware and clone storage using specialist
-                tools that avoid further damage.
+                <span className="font-medium text-foreground">
+                  Priority intake:
+                </span>{" "}
+                we arrange an appointment or courier so your device reaches the
+                lab as soon as possible.
               </li>
               <li>
-                Once a clean copy is created, we extract critical data as a
-                priority and deliver it to you.
+                <span className="font-medium text-foreground">
+                  Focused recovery plan:
+                </span>{" "}
+                we prioritise the most important volumes, folders or databases
+                first.
               </li>
               <li>
-                If full recovery is possible, we complete the job and return
-                structured results on new media.
+                <span className="font-medium text-foreground">
+                  Progress updates:
+                </span>{" "}
+                you receive clear updates as imaging, reconstruction and data
+                extraction progress.
               </li>
             </ol>
+          </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Forensic-grade preservation procedures are used when required for
-              insurance or legal cases.
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              Emergency Pricing &amp; Turnaround
+            </h2>
+            <p className="mb-3">
+              Emergency handling focuses on{" "}
+              <span className="font-medium text-foreground">
+                speed without sacrificing safety
+              </span>
+              . Typical emergency cases include:
             </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Server / NAS outages and RAID failures</li>
+              <li>Business laptops and workstations with deadlines</li>
+              <li>Cases tied to legal, court or regulatory dates</li>
+            </ul>
+            <p className="mt-3">
+              Emergency pricing is higher than standard service and may include
+              an{" "}
+              <span className="font-medium text-foreground">
+                agreed emergency fee
+              </span>{" "}
+              for out-of-hours work. Exact costs depend on device type, failure
+              mode and urgency.
+            </p>
+            <p className="mt-3">
+              Where possible, logical-only emergency cases still follow our{" "}
+              <span className="font-medium text-foreground">
+                &quot;no recovery, no payment&quot;
+              </span>{" "}
+              policy for the main recovery fee.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <CTA href="/pricing" size="md">
+                View standard pricing ranges
+              </CTA>
+              <CTA href="/process" variant="outline" size="sm">
+                See our recovery process
+              </CTA>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA STRIP */}
-      <section className="border-t bg-muted/40 py-8 md:py-10">
-        <div className="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-sm md:text-base font-semibold">
-              Need urgent recovery right now?
-            </h2>
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Tell us the device type and what happened. We&apos;ll guide you
-              through the safest next step.
-            </p>
+      {/* QUICK FAQ */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-4">
+            Emergency Data Recovery – Quick FAQ
+          </h2>
+          <div className="space-y-4 text-sm md:text-base text-muted-foreground">
+            <div>
+              <p className="font-medium text-foreground">
+                Do you come on-site for emergencies?
+              </p>
+              <p>
+                In most cases we work from our lab so we can use the right
+                tools and a controlled environment. For certain server cases,
+                limited on-site work or supervised removal of drives may be
+                possible by arrangement.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-medium text-foreground">
+                How fast can you start working on my case?
+              </p>
+              <p>
+                Once the device is in our lab and emergency handling is agreed,
+                we usually begin evaluation the same day or within a few hours,
+                depending on when it arrives.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-medium text-foreground">
+                Will you try risky methods just because it&apos;s urgent?
+              </p>
+              <p>
+                No. Urgency never justifies unsafe procedures. We follow the
+                same safe imaging and recovery methods as standard cases, but we
+                prioritise your case and work extended hours where necessary.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-medium text-foreground">
+                What should I do right now while I wait?
+              </p>
+              <p>
+                Keep the affected device powered off, avoid repeated restarts or
+                rebuild attempts, and avoid running repair tools. The less the
+                system is stressed, the better your chances of a full recovery.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
-            >
-              Talk to a specialist
-            </Link>
-            <Link
-              href="https://wa.me/254768177714"
-              target="_blank"
-              className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-            >
-              WhatsApp (24/7)
-            </Link>
-          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="container px-6 pb-12 md:pb-16 text-center">
+        <h2 className="text-2xl font-semibold mb-3">
+          Need urgent help with a failed drive, RAID or server?
+        </h2>
+        <p className="text-sm md:text-base text-muted-foreground mb-6">
+          Talk directly to a data recovery technician before taking any risky
+          steps. We&apos;ll help you decide the safest and fastest way forward.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <CTA href="tel:+254768177714" size="lg">
+            Call 0768 177 714 now
+          </CTA>
+          <CTA
+            href="https://wa.me/254768177714?text=Hi%20Data%20Revive%20Labs%2C%20I%20have%20an%20urgent%20data%20recovery%20case."
+            variant="outline"
+            size="md"
+          >
+            WhatsApp about an emergency
+          </CTA>
         </div>
       </section>
     </main>

@@ -1,185 +1,279 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { CTA } from "../../components/ui/cta";
 
 export const metadata: Metadata = {
-  title: "RAID, NAS & Server Data Recovery | Data Revive Labs Nairobi",
+  title: "RAID & NAS Server Data Recovery | Data Revive Labs Kenya",
   description:
-    "Professional RAID, NAS and server data recovery in Nairobi, Kenya. RAID rebuild failures, NAS outages, multi-disk crashes and virtual machine recovery.",
+    "Professional RAID, NAS and server data recovery in Kenya. Failed arrays, rebuild errors, multi-disk failures and virtualised storage handled in a technician-only lab.",
   alternates: {
     canonical: "https://datarevivelabs.co.ke/services/raid-nas",
   },
 };
 
-export default function RaidNasRecoveryPage() {
+export default function RaidNasRecovery() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      {/* HERO / INTRO */}
-      <section className="border-b bg-gradient-to-b from-background via-background to-muted/40 py-12 md:py-16">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-          {/* TEXT SIDE */}
-          <div className="space-y-4">
-            <p className="text-[11px] md:text-xs tracking-[0.25em] text-emerald-500 uppercase">
-              SERVICES • RAID / NAS / SERVER
+    <main className="min-h-screen bg-background">
+      {/* HERO */}
+      <section className="border-b bg-gradient-to-b from-background to-emerald-50/40">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-[1.4fr_1fr] items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-emerald-600 mb-2">
+              RAID • NAS • SERVERS
             </p>
-
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-              RAID, NAS &amp; server data recovery for{" "}
-              <span className="text-emerald-500">business-critical systems</span>.
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              RAID &amp; NAS Server Data Recovery
             </h1>
-
-            <p className="text-sm md:text-base text-muted-foreground">
-              We recover data from failed RAID arrays, NAS appliances and
-              servers used by SMEs, NGOs and teams across Kenya. Whether it’s a
-              failed rebuild, multiple disk failures or a corrupted volume, our
-              goal is to get you back online with minimal downtime.
+            <p className="text-sm md:text-base text-muted-foreground mb-4">
+              Your array will not mount, a rebuild has failed, or multiple disks
+              have dropped out. We help businesses and teams recover data from
+              RAID, NAS and server storage without guesswork.
+            </p>
+            <p className="text-sm md:text-base text-muted-foreground mb-6">
+              Every case is handled in a technician-only lab, using controlled
+              imaging and careful reconstruction of the array layout before any
+              file repair or extraction work is done.
             </p>
 
-            <ul className="grid gap-2 text-xs md:text-sm text-muted-foreground">
-              <li>• Failed RAID rebuilds and degraded arrays</li>
-              <li>• Multiple disk failures in RAID 0/1/5/6/10 and more</li>
-              <li>• Corrupted NAS volumes and accidental reinitialisation</li>
-              <li>• Virtual machine and hypervisor datastore issues</li>
-            </ul>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
-              >
-                Speak to a recovery engineer
-              </Link>
-              <Link
-                href="/services/emergency"
-                className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-              >
-                After-hours emergency support →
-              </Link>
+            <div className="flex flex-wrap gap-3">
+              <CTA href="/contact" size="lg">
+                Start a RAID recovery case
+              </CTA>
+              <CTA href="tel:+254768177714" variant="outline" size="md">
+                Call 0768 177 714 (urgent)
+              </CTA>
             </div>
 
-            <p className="text-[11px] md:text-xs text-muted-foreground">
-              For live outages, avoid repeated rebuild attempts or filesystem
-              checks. These can make a bad situation worse—contact us first.
+            <p className="mt-3 text-xs md:text-sm text-muted-foreground">
+              For outages that affect production systems, mention that it is{" "}
+              <span className="font-medium">business-critical</span> so we can
+              prioritise your evaluation.
             </p>
           </div>
 
-          {/* IMAGE SIDE */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-[260px] h-[260px] md:w-[320px] md:h-[320px] rounded-3xl border bg-card overflow-hidden shadow-lg">
-              <Image
-                src="/services/raid-nas.png"
-                alt="RAID and NAS data recovery for servers and multi-disk arrays"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 320px, (min-width: 768px) 260px, 220px"
-                priority
-              />
-            </div>
+          <div className="relative h-56 md:h-72 lg:h-80 w-full">
+            <Image
+              src="/services/raid-nas.png"
+              alt="RAID and NAS server data recovery in Kenya"
+              fill
+              className="rounded-2xl object-cover shadow-md"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
-      {/* SECTIONS */}
-      <section className="py-10 md:py-14">
-        <div className="container mx-auto max-w-5xl px-6 grid gap-10 md:grid-cols-2">
-          {/* LEFT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              Common RAID &amp; NAS failure scenarios
-            </h2>
-            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
-              <li>
-                • A second disk fails while the array is rebuilding from a
-                previous failure.
-              </li>
-              <li>
-                • Someone accidentally pulls the wrong drive during maintenance
-                or hot-swap.
-              </li>
-              <li>
-                • NAS firmware updates cause the volume to disappear or show as
-                &quot;uninitialized&quot;.
-              </li>
-              <li>
-                • Power problems or surges corrupt a RAID controller or
-                filesystem.
-              </li>
-              <li>
-                • A virtualisation host (VMware, Hyper-V, Proxmox, etc.) loses
-                access to its datastore.
-              </li>
-            </ul>
+      {/* COMMON SCENARIOS */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto mb-8">
+          <h2 className="text-2xl font-semibold mb-3">
+            Common RAID &amp; NAS Failure Scenarios
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground">
+            We support most common configurations used by small businesses,
+            offices and teams, including RAID 0/1/5/6/10, NAS appliances and
+            virtualised storage.
+          </p>
+        </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              In these situations, every rebuild attempt, disk swap or filesystem
-              repair can further damage the data. Power the system down safely
-              and contact us before making changes.
-            </p>
+        <div className="grid gap-6 md:grid-cols-3 text-sm md:text-base text-muted-foreground">
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">Logical / OS-level</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Deleted or formatted volumes on RAID/NAS</li>
+              <li>Corrupted file systems after power loss</li>
+              <li>Accidental removal of virtual disks or LUNs</li>
+              <li>Failed updates that leave shares inaccessible</li>
+            </ul>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="space-y-4">
-            <h2 className="text-lg md:text-xl font-semibold">
-              How our RAID &amp; NAS recovery works
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Array &amp; parity problems
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Rebuild failures or stalled rebuilds</li>
+              <li>Wrong disk order after swapping drives</li>
+              <li>Multiple drive failures in RAID 5/6</li>
+              <li>Degraded arrays that no longer mount</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm">
+            <p className="font-semibold text-foreground mb-2">
+              Hardware &amp; disk-level issues
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Clicking or non-detecting member disks</li>
+              <li>Bad sectors across multiple drives</li>
+              <li>Controller or backplane failures</li>
+              <li>Damaged NAS units after power events</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT TO DO / WHAT TO AVOID */}
+      <section className="bg-muted/40 border-y">
+        <div className="container px-6 py-12 md:py-16 grid gap-10 md:grid-cols-2">
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              What You Should Do Now
             </h2>
-            <ol className="space-y-2 text-xs md:text-sm text-muted-foreground list-decimal list-inside">
+            <ul className="list-disc pl-5 space-y-2">
               <li>
-                We gather details of your setup: RAID level, number of disks,
-                make/model of NAS or controller, and symptoms.
+                <span className="font-medium text-foreground">Stop all rebuilds:</span>{" "}
+                if the array is degraded or throwing errors, stop rebuild
+                attempts immediately.
               </li>
               <li>
-                All member disks are cloned sector-by-sector using write-blocked
-                hardware to preserve their original state.
+                <span className="font-medium text-foreground">Label everything:</span>{" "}
+                note slot positions, drive order and any changes made so far.
               </li>
               <li>
-                We analyse the array metadata and reconstruct the virtual volume
-                layout in a controlled environment.
+                <span className="font-medium text-foreground">Record messages:</span>{" "}
+                take photos of error screens and NAS logs where possible.
               </li>
               <li>
-                Once the volume is mounted safely, we extract your critical data
-                to new storage.
+                <span className="font-medium text-foreground">Contact us early:</span>{" "}
+                the fewer &quot;experiments&quot; that have been tried, the better the
+                chance of a clean recovery.
+              </li>
+            </ul>
+          </div>
+
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              Please Avoid Doing This
+            </h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Do not remove or swap disks without recording their{" "}
+                <span className="font-medium text-foreground">exact order</span>.
               </li>
               <li>
-                You validate the recovered files, then we hand over the data and
-                provide advice on safer future configurations.
+                Do not initialise or create a new array on the same disks &mdash;
+                this can overwrite critical metadata.
+              </li>
+              <li>
+                Avoid running generic &quot;repair&quot; tools that treat the array
+                like a single basic disk.
+              </li>
+              <li>
+                Do not keep forcing a rebuild that keeps failing; this can
+                destroy remaining parity.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS & PRICING */}
+      <section className="container px-6 py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              How We Approach RAID &amp; NAS Recovery
+            </h2>
+            <ol className="list-decimal pl-5 space-y-2 text-sm md:text-base text-muted-foreground">
+              <li>
+                <span className="font-medium text-foreground">
+                  Case review and stabilisation:
+                </span>{" "}
+                we review logs, symptoms and any actions already taken, then
+                stabilise the environment.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Disk-by-disk imaging:
+                </span>{" "}
+                each member disk is imaged where possible so that we work from
+                safe copies instead of the originals.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Array reconstruction:
+                </span>{" "}
+                we analyse parity, stripe size and disk order to rebuild the
+                virtual layout of the array.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  File system repair &amp; extraction:
+                </span>{" "}
+                once the array is virtually rebuilt, we repair file systems and
+                extract critical data.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Verification &amp; delivery:
+                </span>{" "}
+                recovered data is verified and delivered on new media or secure
+                transfer.
               </li>
             </ol>
+          </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground">
-              We work with arrays from common NAS brands (Synology, QNAP, Dell,
-              HP and more) as well as custom-built servers and DAS units.
+          <div className="border rounded-xl p-5 bg-background shadow-sm text-sm md:text-base text-muted-foreground">
+            <h2 className="text-lg font-semibold mb-3 text-foreground">
+              RAID &amp; NAS Pricing – Typical Ranges
+            </h2>
+            <p className="mb-3">
+              RAID and NAS cases vary widely in complexity. As a guideline:
             </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Logical issues on healthy disks: from{" "}
+                <span className="font-medium text-foreground">KSh 35,000</span>
+              </li>
+              <li>
+                Degraded arrays with one failing disk: from{" "}
+                <span className="font-medium text-foreground">KSh 55,000</span>
+              </li>
+              <li>
+                Multiple failed disks or complex virtualised setups: from{" "}
+                <span className="font-medium text-foreground">KSh 85,000+</span>
+              </li>
+            </ul>
+            <p className="mt-3">
+              For many logical-only cases, we still follow a{" "}
+              <span className="font-medium text-foreground">
+                &quot;no recovery, no payment&quot;
+              </span>{" "}
+              policy. For heavy hardware and multi-disk failures, a lab attempt
+              fee is agreed upfront and deducted from the final cost if
+              recovery succeeds.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <CTA href="/pricing" size="md">
+                View full pricing
+              </CTA>
+              <CTA href="/process" variant="outline" size="sm">
+                See full recovery process
+              </CTA>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA STRIP */}
-      <section className="border-t bg-muted/40 py-8 md:py-10">
-        <div className="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-sm md:text-base font-semibold">
-              Facing a RAID, NAS or server outage?
-            </h2>
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Tell us what happened and we&apos;ll advise the safest path to
-              get your data and systems back.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 text-xs md:text-sm font-medium text-white shadow-md shadow-emerald-600/30 hover:bg-emerald-700"
-            >
-              Request RAID/NAS help
-            </Link>
-            <Link
-              href="https://wa.me/254768177714"
-              target="_blank"
-              className="inline-flex items-center rounded-full border border-emerald-600 px-4 py-2 text-xs md:text-sm font-medium text-emerald-600 hover:bg-emerald-50"
-            >
-              WhatsApp an engineer
-            </Link>
-          </div>
+      {/* FINAL CTA */}
+      <section className="container px-6 pb-12 md:pb-16 text-center">
+        <h2 className="text-2xl font-semibold mb-3">
+          Server or NAS down? Talk to a recovery technician first.
+        </h2>
+        <p className="text-sm md:text-base text-muted-foreground mb-6">
+          Before rebuilding, re-initialising or swapping more disks, get a
+          professional opinion. The right first move can decide whether your
+          data survives.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <CTA href="/contact" size="lg">
+            Submit a RAID recovery enquiry
+          </CTA>
+          <CTA href="https://wa.me/254768177714" variant="outline" size="md">
+            WhatsApp about a RAID failure
+          </CTA>
         </div>
       </section>
     </main>
